@@ -1,0 +1,48 @@
+13 ANSWER)
+
+SQL> SELECT salesman.name AS "Salesman", customer.cust_name, customer.city FROM salesman,customer WHERE salesman.city=customer.city;
+
+Salesman             CUST_NAME            CITY
+-------------------- -------------------- --------------------
+james hoog           nick rimando         new york
+james hoog           brad davis           new york
+pit alex             julian green         london
+mc lyon              fabian johnson       paris
+nail knite           fabian johnson       paris
+pit alex             brad guzan           london
+
+6 rows selected.
+
+14 ANSWER)
+
+SQL> SELECT a.cust_name AS "Customer Name", a.city, b.name AS "Salesman", b.commission FROM customer a INNER JOIN salesman b ON a.salesman_id=b.salesman_id;
+
+Customer Name        CITY                 Salesman             COMMISSION
+-------------------- -------------------- -------------------- ----------
+nick rimando         new york             james hoog                  .15
+brad davis           new york             james hoog                  .15
+graham zusi          california           nail knite                  .13
+julian green         london               nail knite                  .13
+fabian johnson       paris                mc lyon                     .14
+geoff cameron        berlin               lauson hen                  .12
+jozy altidor         moscow               paul adam                   .13
+brad guzan           london               pit alex                    .11
+
+8 rows selected.
+
+
+15 ANSWER)
+
+
+SQL> SELECT a.cust_name AS "Customer Name", a.city, b.name AS "Salesman", b.commission FROM customer a INNER JOIN salesman b ON a.salesman_id=b.salesman_id WHERE b.commission>.12;
+
+Customer Name        CITY                 Salesman             COMMISSION
+-------------------- -------------------- -------------------- ----------
+nick rimando         new york             james hoog                  .15
+brad davis           new york             james hoog                  .15
+graham zusi          california           nail knite                  .13
+julian green         london               nail knite                  .13
+fabian johnson       paris                mc lyon                     .14
+jozy altidor         moscow               paul adam                   .13
+
+6 rows selected.

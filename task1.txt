@@ -1,0 +1,197 @@
+1 ANSWER)
+SQL> select first_name as worker_name from worker;
+
+WORKER_NAME
+--------------------
+Monika
+Niharika
+Vishal
+Amitabh
+Vivek
+Vipul
+Satish
+Geetika
+
+2 ANSWER)
+SQL> select instr(first_name,'a') from worker where first_name='Amitabh';
+
+INSTR(FIRST_NAME,'A')
+---------------------
+                   5
+
+3 ANSWER)
+SQL> select replace(first_name,'a','A')from worker;
+
+REPLACE(FIRST_NAME,'
+--------------------
+MonikA
+NihArikA
+VishAl
+AmitAbh
+Vivek
+Vipul
+SAtish
+GeetikA
+
+4 ANSWER)
+SQL> select * from worker order by first_name asc;
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         4 Amitabh              Singh                    500000 14-FEB-20
+Admin
+
+         8 Geetika              Chauhan                   90000 14-APR-11
+Admin
+
+         1 Monika               Arora                    100000 14-FEB-20
+HR
+
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         2 Niharika             Verma                     80000 14-JUN-11
+Admin
+
+         7 Satish               Kumar                     75000 14-JAN-20
+Account
+
+         6 Vipul                Diwan                    200000 14-JUN-11
+Account
+
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         3 Vishal               Singhal                  300000 14-FEB-20
+HR
+
+         5 Vivek                Bhati                    500000 14-JUN-11
+Admin
+
+
+8 rows selected.
+
+5 ANSWER)
+
+
+SQL> select * from worker order by first_name asc,department desc;
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         4 Amitabh              Singh                    500000 14-FEB-20
+Admin
+
+         8 Geetika              Chauhan                   90000 14-APR-11
+Admin
+
+         1 Monika               Arora                    100000 14-FEB-20
+HR
+
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         2 Niharika             Verma                     80000 14-JUN-11
+Admin
+
+         7 Satish               Kumar                     75000 14-JAN-20
+Account
+
+         6 Vipul                Diwan                    200000 14-JUN-11
+Account
+
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         3 Vishal               Singhal                  300000 14-FEB-20
+HR
+
+         5 Vivek                Bhati                    500000 14-JUN-11
+Admin
+
+
+8 rows selected.
+
+6 ANSWER)
+SQL> select * from worker where first_name in('Vipul','Satish');
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         6 Vipul                Diwan                    200000 14-JUN-11
+Account
+
+         7 Satish               Kumar                     75000 14-JAN-20
+Account
+
+
+7 ANSWER)
+
+SQL> select * from worker_table where department='Admin';
+
+WORKER_ID  FIRST_NAME           LAST_NAME                SALARY
+---------- -------------------- -------------------- ----------
+JOINING_DATE         DEPARTMENT
+-------------------- ----------
+002        Niharika             Verma                     80000
+2014-06-11 09:00:00  Admin
+
+004        Amitabh              Singh                    500000
+2014-06-11 09:00:00  Admin
+
+005        Vivek                Bhati                    500000
+2014-06-11 09:00:00  Admin
+
+
+WORKER_ID  FIRST_NAME           LAST_NAME                SALARY
+---------- -------------------- -------------------- ----------
+JOINING_DATE         DEPARTMENT
+-------------------- ----------
+008        Geetika              Chauhan                   90000
+2014-04-11 09:00:00  Admin
+
+8 ANSWER)
+
+SQL> select * from worker where first_name like '%a%';
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         1 Monika               Arora                    100000 14-FEB-20
+HR
+
+         2 Niharika             Verma                     80000 14-JUN-11
+Admin
+
+         3 Vishal               Singhal                  300000 14-FEB-20
+HR
+
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         4 Amitabh              Singh                    500000 14-FEB-20
+Admin
+
+         7 Satish               Kumar                     75000 14-JAN-20
+Account
+
+         8 Geetika              Chauhan                   90000 14-APR-11
+Admin
+
+
+6 rows selected.
