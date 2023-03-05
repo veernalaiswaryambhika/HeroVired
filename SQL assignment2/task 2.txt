@@ -1,0 +1,78 @@
+9 ANSWER)
+SQL> select * from worker where salary between 100000 and 500000;
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         1 Monika               Arora                    100000 14-FEB-20
+HR
+
+         3 Vishal               Singhal                  300000 14-FEB-20
+HR
+
+         4 Amitabh              Singh                    500000 14-FEB-20
+Admin
+
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         5 Vivek                Bhati                    500000 14-JUN-11
+Admin
+
+         6 Vipul                Diwan                    200000 14-JUN-11
+Account
+
+10 ANSWER)
+
+SQL> select * from worker where first_name like '_____h';
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         7 Satish               Kumar                     75000 14-JAN-20
+Account
+
+11 ANSWER)
+
+SQL>SELECT * FROM worker WHERE year(joining_date) = 2014 AND month(joining_date) = 'Feb';
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         1 Monika               Arora                    100000 14-FEB-20
+HR
+
+         3 Vishal               Singhal                  300000 14-FEB-11
+HR
+
+         4 Amitabh              Singh                    500000 14-FEB-20
+Admin
+
+12 ANSWER)
+SQL> select * from worker where salary>=50000 and salary<=100000;
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         1 Monika               Arora                    100000 14-FEB-20
+HR
+
+         2 Niharika             Verma                     80000 14-JUN-11
+Admin
+
+         7 Satish               Kumar                     75000 14-JAN-20
+Account
+
+
+ WORKER_ID FIRST_NAME           LAST_NAME                SALARY JOINING_D
+---------- -------------------- -------------------- ---------- ---------
+DEPARTMENT
+--------------------
+         8 Geetika              Chauhan                   90000 14-APR-11
+Admin
