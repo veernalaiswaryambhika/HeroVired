@@ -1,0 +1,29 @@
+class Solution {
+public:
+    void func(int i,int n,vector<int>&can,vector<int>&nums,vector<vector<int>>&res,int t)
+    {
+        if(i==n )
+        {
+            if(t==0)
+            res.push_back(nums);
+            return;            
+        }
+        if(can[i]<=t)
+        {
+            nums.push_back(can[i]);
+            t=t-can[i];
+            func(i,n,can,nums,res,t);
+            t=t+can[i];
+            nums.pop_back();
+        }
+        
+        func(i+1,n,can,nums,res,t);
+    }
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<int>nums;
+        vector<vector<int>>res;
+        int n=candidates.size();
+        func(0,n,candidates,nums,res,target);
+        return res;
+    }
+};

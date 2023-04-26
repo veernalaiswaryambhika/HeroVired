@@ -1,0 +1,50 @@
+class Solution {
+    public int[][] generateMatrix(int n) {
+        int matrix[][]=new int[n][n];
+       int c=1;
+        int t=0,d=n-1,l=0,ri=n-1;
+        int dd=0;
+        while(t<=d && l<=ri)
+        {
+            if(dd==0)
+            {
+                for(int i=l;i<=ri;i++,c++)
+                {
+                    matrix[t][i]=c;
+                    
+                }
+			t++;
+            }
+		 else if(dd==1)
+            {
+                for(int i=t;i<=d;i++,c++)
+                {
+                   matrix[i][ri]=c;
+                   
+                }
+			 ri--;
+            }
+            else if(dd==2)
+            {
+                for(int i=ri;i>=l;i--,c++)
+                {
+                    matrix[d][i]=c;
+                    
+               }
+			d--;
+            }
+            else if(dd==3)
+            {
+                for(int i=d;i>=t;i--,c++)
+                {
+                    matrix[i][l]=c;
+                    
+                }
+			l++;
+            }
+         
+            dd=(dd+1)%4; 
+        }
+        return matrix;
+    }
+}

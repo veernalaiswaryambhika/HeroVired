@@ -1,0 +1,17 @@
+class Solution {
+    public double myPow(double x, int n) {
+        int p=n;
+        double q=x;
+        return (Math.pow(q,p));
+        
+        
+    }
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        Solution o=new Solution();
+        int i=s.nextInt();
+        double j=s.nextInt();
+        System.out.println(o.myPow(j,i));
+    }
+}

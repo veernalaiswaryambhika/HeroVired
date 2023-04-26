@@ -1,0 +1,34 @@
+class Solution {
+public:
+    void func(int ind,vector<int>&nums,vector<vector<int>>&res,vector<int>&candidates,int t)
+    {
+       
+        if(t==0){
+            res.push_back(nums);
+            return;
+        }
+                
+        
+        for(int i=ind;i<candidates.size();i++)
+        {
+            if( i>ind && candidates[i]==candidates[i-1] ) 
+                continue;
+            if(candidates[i]>t)
+                 break;
+            nums.push_back(candidates[i]);
+            func(i+1,nums,res,candidates,t-candidates[i]);
+            nums.pop_back();
+
+        }
+        
+     
+    }
+public:
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        sort(candidates.begin(),candidates.end());
+        vector<vector<int>>res;
+        vector<int>nums;
+        func(0,nums,res,candidates,target);
+        return res;
+    }
+};
